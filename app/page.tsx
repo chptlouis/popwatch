@@ -1,12 +1,17 @@
-import Image from "next/image";
-import Navbar from "./components/navbar";
+import { getTrendingMovies } from "./services/tmdb";
+import Carousel from "./components/carousel";
 
-export default function Home() {
+export default async function Home() {
+  const trendingMovies = await Promise.all([
+    getTrendingMovies()
+  ])
+  const trendingMoviesPosters = trendingMovies[0].map((movie: any) => movie.backdrop_path);
+  console.log('yo :', trendingMoviesPosters);
+
   return (
     <div>
       <main>
-        <section>
-        </section>
+        <Carousel trendingMoviesPosters={trendingMoviesPosters} />
       </main>
     </div>
   );

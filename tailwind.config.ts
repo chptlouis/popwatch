@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
         navbar: '#212529',
       },
+      extend: {
+        blackOverlay: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 100)",
+      },
     },
   },
   plugins: [],
