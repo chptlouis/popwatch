@@ -7,6 +7,10 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      'panton': ['Panton', 'sans-serif'],
+      sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'], 
+    },
     extend: {
       colors: {
         background: "var(--background)",

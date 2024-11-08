@@ -14,8 +14,14 @@
   }
 }
 
+@font-face {
+  font-family: 'Panton';
+  src: url('fonts/Panton-Trial-Heavy.ttf');
+  font-style: normal;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Panton;
 }

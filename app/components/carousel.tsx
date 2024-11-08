@@ -40,7 +40,7 @@ export default function Carousel({ trendingMoviesPosters }: CarouselProps) {
                 animate={{ x: 20, y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
             >
-                <h1 className="text-6xl text-white font-bold">On mate quoi ce soir ?</h1>
+                <h1 className="text-6xl text-white font-panton">On mate quoi ce soir ?</h1>
                 
             </motion.div>
             <motion.div
