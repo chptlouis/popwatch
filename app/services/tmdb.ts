@@ -18,3 +18,12 @@ export const getTopRatedMovies = async () => {
     console.log('getTopRatedMovies : ', responseBody.results);
     return responseBody.results;
 }
+
+export const getMovieDetails = async (id: string) => {
+    const response = await fetch(
+        `${API_URL}/movie/${id}?api_key=${API_KEY}&language=fr-FR`
+    );
+    const responseBody = await response.json();
+    console.log('getMovieDetails : ', responseBody);
+    return responseBody;
+}
