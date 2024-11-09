@@ -15,7 +15,7 @@ export default async function TopRated() {
                 >
                     <h1 className="font-poppins text-3xl md:text-4xl ml-4 mb-8 font-bold text-white">Les mieux notés</h1>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {topRatedMovies[0].map((movie: any, index: number) => (
+                        {topRatedMovies[0]?.map((movie: any, index: number) => (
                             <MovieCard key={index} movie={movie} />
                         ))}
                     </div>

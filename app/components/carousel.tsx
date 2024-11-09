@@ -19,7 +19,7 @@ export default function Carousel({ trendingMoviesPosters }: CarouselProps) {
 
     return (
         <section className="relative h-[80vh] md:h-[90vh] flex items-center overflow-hidden">
-          {trendingMoviesPosters.map((poster: string, index: Key | null | undefined) => (
+          {trendingMoviesPosters?.map((poster: string, index: Key | null | undefined) => (
             <div
             key={index}
             className={`absolute inset-0 w-full h-full transition-opacity duration-1000 

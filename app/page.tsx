@@ -5,7 +5,7 @@ export default async function Home() {
   const trendingMovies = await Promise.all([
     getTrendingMovies()
   ])
-  const trendingMoviesPosters = trendingMovies[0].map((movie: any) => movie.backdrop_path);
+  const trendingMoviesPosters = trendingMovies[0]?.map((movie: any) => movie.backdrop_path);
 
   return (
     <div>
