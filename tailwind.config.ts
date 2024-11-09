@@ -9,7 +9,8 @@ export default {
   theme: {
     fontFamily: {
       'panton': ['Panton', 'sans-serif'],
-      sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'], 
+      sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'],
+      poppins: ['Poppins', 'sans-serif'],
     },
     extend: {
       colors: {
