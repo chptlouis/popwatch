@@ -41,14 +41,28 @@ export default function Carousel({ trendingMoviesPosters }: CarouselProps) {
                 transition={{ duration: 1 }}
             >
                 <h1 className="text-4xl lg:text-6xl text-white font-panton">On mate quoi ce soir ?</h1>
-                
             </motion.div>
             <motion.div
-                initial={{ x: 0, y: 30, opacity: 0 }}
-                animate={{ x: 30, y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
+                initial={{ x: 0, y: 20, opacity: 0 }}
+                animate={{ x: 20, y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
             >
-                <h1 className="text-2xl text-white mt-4">Découvrez les films les plus populaires du moment</h1>
+                <h1 className="text-xl lg:text-2xl text-white mt-4">Découvrez les films les plus populaires du moment</h1>
+            </motion.div>
+            <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="flex flex-row group gap-4 mt-6 ml-8"
+            >
+                <button className="flex flex-row items-center gap-2 p-2 rounded border text-white hover:bg-white hover:bg-opacity-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <a href="/top-rated">Les mieux notés</a>
+                </button>
+                <button className="flex flex-row items-center gap-2 p-2 rounded border text-white hover:bg-white hover:bg-opacity-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <a href="/genres">Tous les genres</a>
+                </button>
             </motion.div>
           </div>
         </section>

@@ -16,6 +16,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         navbar: '#212529',
+        section: '#495057',
       },
       extend: {
         blackOverlay: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 100)",

@@ -6,7 +6,6 @@ export default async function Home() {
     getTrendingMovies()
   ])
   const trendingMoviesPosters = trendingMovies[0].map((movie: any) => movie.backdrop_path);
-  console.log('yo :', trendingMoviesPosters);
 
   return (
     <div>

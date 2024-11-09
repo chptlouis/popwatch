@@ -9,3 +9,12 @@ export const getTrendingMovies = async () => {
     console.log(responseBody.results);
     return responseBody.results;
 }
+
+export const getTopRatedMovies = async () => {
+    const response = await fetch(
+        `${API_URL}/movie/top_rated?api_key=${API_KEY}&language=fr-FR&page=1`
+    );
+    const responseBody = await response.json();
+    console.log('getTopRatedMovies : ', responseBody.results);
+    return responseBody.results;
+}
