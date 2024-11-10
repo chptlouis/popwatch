@@ -3,7 +3,7 @@ const API_KEY=process.env.NEXT_PUBLIC_API_KEY
 
 export const getTrendingMovies = async () => {
     const response = await fetch(
-        `${API_URL}/trending/movie/day?api_key=${API_KEY}&language=fr-FR`
+        `${API_URL}/trending/movie/week?api_key=${API_KEY}&language=fr-FR`
     );
     const responseBody = await response.json();
     console.log(responseBody.results);

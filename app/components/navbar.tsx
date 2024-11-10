@@ -15,7 +15,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-navbar border-gray-200 dark:bg-gray-900">
+        <nav className="bg-navbar border-gray-200 dark:bg-gray-900 sticky top-0 z-50">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
                 <a href="https://popwatch-liard.vercel.app/" className="flex items-center space-x-3">
                     <img src="https://www.svgrepo.com/show/35017/popcorn.svg" className="h-8" />
