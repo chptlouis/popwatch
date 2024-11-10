@@ -1,9 +1,11 @@
 import { getMovieDetails } from "@/app/services/tmdb";
 
-export default async function Movie({ params } : { params: { id: string } }) {
-    console.log('id :', params.id);
-    const movieDetails = await getMovieDetails(params.id);
-    console.log(movieDetails);
+export default async function Movie(props: any) {
+    const { id } = await props.params;
+    const movieDetails = await getMovieDetails(id);
+    if (movieDetails) {
+        console.log(movieDetails);
+    }
     return (
         <main className="min-h-screen">
             <div className="relative h-[120vh] md:h-[90vh] flex items-center">
@@ -14,11 +16,13 @@ export default async function Movie({ params } : { params: { id: string } }) {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-60" />
                 <div className="absolute inset-0 flex justify-center items-center w-full">
-                    <div className="flex flex-col lg:flex-row items-center lg:gap-28 p-4 rounded-lg max-w-screen-lg">
+                    <div className="flex flex-col lg:flex-row h-screen items-center lg:gap-28 p-4 rounded-lg max-w-screen-lg">
                         <img
                             src={`https://image.tmdb.org/t/p/original${movieDetails.poster_path}`}
                             alt={movieDetails.title}
-                            className="max-w-[350px] rounded-lg shadow-lg mb-12 lg:mb-0"
+                            width={400}
+                            height={600}
+                            className=""
                         />
                         <div className="flex flex-col text-center lg:text-left">
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
