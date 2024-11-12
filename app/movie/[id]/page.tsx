@@ -38,9 +38,11 @@ export default async function Movie(props: any) {
                         <div className="flex items-center gap-4">
                             {
                                 movieDetails.genres?.map((genre: any, index: number) => (
-                                    <span key={index} className="px-2 py-1 bg-blue-500/20 rounded-md text-blue-300 text-sm">
-                                        {genre.name}
-                                    </span>
+                                    <a href={`/genres/${genre.id}`} key={index} className="px-2 py-1 bg-blue-500/20 rounded-md text-blue-300 text-sm">
+                                        <span>
+                                            {genre.name}
+                                        </span>
+                                    </a>
                                 ))
                             }
                         </div>
