@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Popwatch
+# By Louis with ❤️
 
-## Getting Started
+Popwatch est une application web réalisée avec NextJS et Tailwind à l'aide de l'API de [The Movie Database](https://www.themoviedb.org/).
+Finies les soirées où on ne sait pas quoi regarder, Popwatch vous propose une sélection de films et de séries les mieux notées.
 
-First, run the development server:
+Envie de rire ? De pleurer ? De frissonner ? Triez par genre pour trouver le film parfait pour votre mood de la journée.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Homepage](homepage.png)
+![Movie page](moviepage.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clonez le projet
+2. Installez les dépendances avec `npm install`
+3. Créez un fichier `.env` à la racine du projet et ajoutez-y votre clé API comme ceci : `NEXT_PUBLIC_API_KEY=VOTRE_CLE_API`
+4. Lancez le projet avec `npm run dev`
+5. Rendez-vous sur `http://localhost:3000`
