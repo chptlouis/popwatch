@@ -18,7 +18,7 @@ export default async function Movie(props: any) {
                 <div className="absolute inset-0 bg-black bg-opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent" />
             </div>
-            <div className="container mx-auto px-4 -mt-96 mb-8">
+            <div className="container mx-auto px-4 -mt-72 md:-mt-96 mb-8">
                 <div className="flex flex-col lg:flex-row lg:gap-16 py-8">
                     <div className="w-full lg:w-1/3">
                         <div className="group relative">

@@ -40,14 +40,14 @@ export default function Carousel({ trendingMoviesPosters }: CarouselProps) {
                 animate={{ x: 20, y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
             >
-                <h1 className="text-4xl lg:text-6xl text-white font-poppins font-bold">On mate quoi ce soir ?</h1>
+                <h1 className="text-2xl md:text-4xl lg:text-6xl text-white font-poppins font-bold">On mate quoi ce soir ?</h1>
             </motion.div>
             <motion.div
                 initial={{ x: 0, y: 20, opacity: 0 }}
                 animate={{ x: 20, y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
             >
-                <h1 className="font-poppins text-xl lg:text-2xl text-white mt-4">Découvrez les films les plus populaires du moment</h1>
+                <h1 className="font-poppins text-md md:text-2xl text-white mt-4">Découvrez les films les plus populaires du moment</h1>
             </motion.div>
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
