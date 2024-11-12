@@ -1,11 +1,11 @@
-import { getTrendingMovies } from "./services/tmdb";
+import { getTopRatedMovies } from "./services/tmdb";
 import Carousel from "./components/carousel";
 
 export default async function Home() {
-  const trendingMovies = await Promise.all([
-    getTrendingMovies()
+  const topRatedMovies = await Promise.all([
+    getTopRatedMovies(),
   ])
-  const trendingMoviesPosters = trendingMovies[0]?.map((movie: any) => movie.backdrop_path);
+  const trendingMoviesPosters = topRatedMovies[0]?.map((movie: any) => movie.backdrop_path);
 
   return (
     <div>
