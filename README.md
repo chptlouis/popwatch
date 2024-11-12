@@ -17,4 +17,4 @@ Envie de rire ? De pleurer ? De frissonner ? Triez par genre pour trouver le fil
 4. Lancez le projet avec `npm run dev`
 5. Rendez-vous sur `http://localhost:3000`
 
-Inspiré de [MovieScope](https://www.moviescope.site/)
+💙 Inspiré de [MovieScope](https://www.moviescope.site/) 💙
