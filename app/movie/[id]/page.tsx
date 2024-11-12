@@ -55,7 +55,7 @@ export default async function Movie(props: any) {
                                     <circle cx="18" cy="18" r="16" fill="none" className="stroke-current text-yellow-200 dark:text-neutral-700" strokeWidth="2"></circle>
                                 </svg>
                                 <div className="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                                    <span className="text-center text-2xl font-bold text-yellow-500 dark:text-yellow-500"> {movieDetails.vote_average.toFixed(1)} </span>
+                                    <span className="text-center text-2xl font-bold text-yellow-500 dark:text-yellow-500"> {movieDetails.vote_average?.toFixed(1)} </span>
                                 </div>
                             </div>
                             <span className="text-lg text-gray-300">
