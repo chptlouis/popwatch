@@ -32,7 +32,7 @@ export default async function Genres() {
                     {genres?.map((genre: { id: number, name: string }, index: number) => (
                         <a href={`/genres/${genre.id}`} key={index} className='flex flex-col items-center gap-2 bg-white/5 rounded-xl p-4 hover:scale-105 transform transition-all duration-300'>
                             <div className="text-4xl">{genresIcons[genre.name]}</div>
-                            <div className="text-2xl text-white font-poppins">
+                            <div className="text-xl md:text-2xl text-white font-poppins">
                                 {genre.name}
                             </div>
                         </a>
