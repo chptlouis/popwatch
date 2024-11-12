@@ -16,3 +16,5 @@ Envie de rire ? De pleurer ? De frissonner ? Triez par genre pour trouver le fil
 3. Créez un fichier `.env` à la racine du projet et ajoutez-y votre clé API comme ceci : `NEXT_PUBLIC_API_KEY=VOTRE_CLE_API`
 4. Lancez le projet avec `npm run dev`
 5. Rendez-vous sur `http://localhost:3000`
+
+Inspiré de [MovieScope](https://www.moviescope.site/)
