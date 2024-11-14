@@ -47,7 +47,7 @@ export default function RecommendedMovies({ movieRecommendations }: any) {
     return (
         <div className="container mx-auto bg-white/5 rounded-lg w-full p-4 pb-12 shadow-2xl">
             <h1 className="text-4xl font-bold text-white p-4 mb-4 mt-4 font-poppins">
-                Films qui pourraient vous plaire
+                Oeuvres similaires
             </h1>
             <Slider {...settings}>
                 {
