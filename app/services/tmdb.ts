@@ -98,3 +98,17 @@ export const getGenreById = async (id: string) => {
         throw new Error('Failed to fetch genre by id');
     }
 }
+
+export const getRecommendedMovies = async (id: string) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/movie/${id}/recommendations?api_key=${API_KEY}&language=fr-FR`
+        );
+        const responseBody = await response.json();
+        return responseBody.results;
+    }
+    catch (error) {
+        console.error(error);
+        throw new Error('Failed to fetch recommended movies');
+    }
+}

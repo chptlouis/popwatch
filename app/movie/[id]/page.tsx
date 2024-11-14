@@ -1,12 +1,18 @@
-import { getMovieDetails, getMovieCredits } from "@/app/services/tmdb";
+
+import RecommendedMovies from "@/app/components/recommendedmovies";
+import { getMovieDetails, getMovieCredits, getRecommendedMovies } from "@/app/services/tmdb";
 
 export default async function Movie(props: any) {
     const { id } = await props.params;
     const movieDetails = await getMovieDetails(id);
     const movieCasting = await getMovieCredits(id);
+    const movieRecommendations = await getRecommendedMovies(id);
+
     if (movieDetails) {
         console.log(movieDetails);
+        console.log(movieRecommendations)
     }
+
     return (
         <main className="min-h-screen">
             <div className="relative h-[40vh] lg:h-[50vh] flex items-center">
@@ -94,6 +100,7 @@ export default async function Movie(props: any) {
                         </div>
                     </div>
                 </div>
+                <RecommendedMovies movieRecommendations={movieRecommendations} />
             </div>
         </main>
     );
