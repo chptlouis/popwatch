@@ -7,7 +7,7 @@ import MovieCard from "./moviecard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function RecommendedMovies({ movieRecommendations }: any) {
+export default function MovieSlider({ movies, sliderText }: any) {
     const settings = {
         dots: false,
         infinite: true,
@@ -45,13 +45,13 @@ export default function RecommendedMovies({ movieRecommendations }: any) {
     };
 
     return (
-        <div className="container mx-auto bg-white/5 rounded-lg w-full p-4 pb-12 shadow-2xl">
+        <div className="container mx-auto bg-white/5 rounded-lg w-full p-8 md:p-4 pb-12 shadow-2xl">
             <h1 className="text-4xl font-bold text-white p-4 mb-4 mt-4 font-poppins">
-                Oeuvres similaires
+                {sliderText}
             </h1>
             <Slider {...settings}>
                 {
-                    movieRecommendations?.map((movie: any, index: number) => (
+                    movies?.map((movie: any, index: number) => (
                         <div key={index} className="p-2">
                             <Link href={`/movie/${movie.id}`}>
                                 <MovieCard movie={movie} />

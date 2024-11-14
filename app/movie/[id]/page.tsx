@@ -1,5 +1,5 @@
 
-import RecommendedMovies from "@/app/components/recommendedmovies";
+import MovieSlider from "@/app/components/movieslider";
 import { getMovieDetails, getMovieCredits, getRecommendedMovies } from "@/app/services/tmdb";
 
 export default async function Movie(props: any) {
@@ -100,7 +100,7 @@ export default async function Movie(props: any) {
                         </div>
                     </div>
                 </div>
-                <RecommendedMovies movieRecommendations={movieRecommendations} />
+                <MovieSlider movies={movieRecommendations} sliderText="Films recommandés" />
             </div>
         </main>
     );
