@@ -13,7 +13,7 @@ export default function Footer() {
                     <h1 className="text-lg font-bold">Liens</h1>
                     <Link href="/" className="text-sm hover:underline">Accueil</Link>
                     <Link href="/top-rated" className="text-sm hover:underline">Les mieux notés</Link>
-                    <Link href="/trending" className="text-sm hover:underline">Tendances</Link>
+                    <Link href="/now-playing?page=1" className="text-sm hover:underline">Tendances</Link>
                 </div>
             </div>
         </footer>

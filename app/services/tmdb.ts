@@ -1,6 +1,21 @@
 const API_URL='https://api.themoviedb.org/3'
 const API_KEY=process.env.NEXT_PUBLIC_API_KEY
 
+export const getNowPlayingMovies = async (page: any) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/movie/now_playing?api_key=${API_KEY}&language=fr-FR&page=${page}`
+        );
+        const responseBody = await response.json();
+        console.log(page);
+        return responseBody.results;
+    }
+    catch (error) {
+        console.error(error);
+        throw new Error('Failed to fetch now playing movies');
+    }
+}
+
 export const getTrendingMovies = async () => {
     try {
         const response = await fetch(
