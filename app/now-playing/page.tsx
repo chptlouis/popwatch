@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import MovieCard from "../components/moviecard";
 import { getNowPlayingMovies } from "../services/tmdb";
 
-export default function NowPlaying() {
+function NowPlayingContent() {
     const searchParams = useSearchParams();
     const page = searchParams.get("page") || "1";
     const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
@@ -55,5 +55,13 @@ export default function NowPlaying() {
                 </div>
             </div>
         </main>
+    );
+}
+
+export default function NowPlaying() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <NowPlayingContent />
+        </Suspense>
     );
 }
