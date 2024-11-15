@@ -100,7 +100,7 @@ export default async function Movie(props: any) {
                         </div>
                     </div>
                 </div>
-                <MovieSlider movies={movieRecommendations} sliderText="Films recommandés" />
+                {movieRecommendations.length > 0 && <MovieSlider movies={movieRecommendations} sliderText="Films recommandés" />}
             </div>
         </main>
     );
