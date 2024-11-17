@@ -10,6 +10,8 @@ export default async function Movie(props: any) {
     const watchProviders = await getWatchProviders(id);
     const movieTrailers: any = await getMovieTrailers(id);
 
+    console.log(watchProviders);
+
     return (
         <main className="min-h-screen">
             <div className="relative h-[40vh] lg:h-[50vh] flex items-center">
@@ -37,7 +39,7 @@ export default async function Movie(props: any) {
                             À streamer sur
                         </h1>
                         <div className="flex items-center gap-4">
-                            {watchProviders?.flatrate?.length === 0  ? (
+                            {watchProviders?.flatrate?.length > 0  ? (
                                 watchProviders?.flatrate?.map((provider: any, index: number) => (
                                     <img
                                         src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
