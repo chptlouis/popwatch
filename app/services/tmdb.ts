@@ -58,6 +58,20 @@ export const getMovieDetails = async (id: string) => {
     }
 }
 
+export const getMovieTrailers = async (id: string) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/movie/${id}/videos?api_key=${API_KEY}&language=fr-FR`
+        );
+        const responseBody = await response.json();
+        return responseBody.results;
+    }
+    catch (error) {
+        console.error(error);
+        throw new Error('Failed to fetch movie trailers');
+    }
+}
+
 export const getMovieCredits = async (id: string) => {
     try {
         const response = await fetch(
@@ -125,5 +139,19 @@ export const getRecommendedMovies = async (id: string) => {
     catch (error) {
         console.error(error);
         throw new Error('Failed to fetch recommended movies');
+    }
+}
+
+export const getWatchProviders = async (id: string) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/movie/${id}/watch/providers?api_key=${API_KEY}`
+        );
+        const responseBody = await response.json();
+        return responseBody.results.FR;
+    }
+    catch (error) {
+        console.error(error);
+        throw new Error('Failed to fetch watch providers');
     }
 }

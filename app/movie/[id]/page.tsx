@@ -1,17 +1,14 @@
 
 import MovieSlider from "@/app/components/movieslider";
-import { getMovieDetails, getMovieCredits, getRecommendedMovies } from "@/app/services/tmdb";
+import { getMovieDetails, getMovieCredits, getRecommendedMovies, getWatchProviders, getMovieTrailers } from "@/app/services/tmdb";
 
 export default async function Movie(props: any) {
     const { id } = await props.params;
     const movieDetails = await getMovieDetails(id);
     const movieCasting = await getMovieCredits(id);
     const movieRecommendations = await getRecommendedMovies(id);
-
-    if (movieDetails) {
-        console.log(movieDetails);
-        console.log(movieRecommendations)
-    }
+    const watchProviders = await getWatchProviders(id);
+    const movieTrailers: any = await getMovieTrailers(id);
 
     return (
         <main className="min-h-screen">
@@ -36,6 +33,40 @@ export default async function Movie(props: any) {
                                 className="w-full rounded-xl shadow-2xl"
                             />
                         </div>
+                        <h1 className="text-2xl font-bold text-white mb-4 font-poppins mt-8">
+                            À streamer sur
+                        </h1>
+                        <div className="flex items-center gap-4">
+                            {watchProviders?.flatrate?.length === 0  ? (
+                                watchProviders?.flatrate?.map((provider: any, index: number) => (
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                                        alt={provider.provider_name}
+                                        key={index}
+                                        className="w-12 rounded-xl"
+                                    />
+                                ))
+                            ) : (
+                                <span className="text-white">Aucune plateforme</span>
+                            )}
+                        </div>
+                        <h1 className="text-2xl font-bold text-white mb-4 font-poppins mt-8">
+                            Ou à louer sur
+                        </h1>
+                        {watchProviders?.rent?.length > 0 ? (
+                            <div className="grid grid-cols-6 md:grid-cols-10 lg:grid-cols-6 gap-4 md:mb-10">
+                                {watchProviders?.rent?.map((provider: any, index: number) => (
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                                        alt={provider.provider_name}
+                                        key={index}
+                                        className="w-12 rounded-xl"
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <span className="text-white">Aucune plateforme</span>
+                        )}
                     </div>
                     <div className="w-full lg:w-2/3 space-y-8 z-10 justify-items-center lg:justify-items-start">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 mt-12">
@@ -68,6 +99,23 @@ export default async function Movie(props: any) {
                                 {new Date(movieDetails.release_date).getFullYear()}
                             </span>
                         </div>
+                        <h1 className="text-4xl font-bold text-white mb-4 mt-4 font-poppins">
+                            Bandes-annonces
+                        </h1>
+                        {movieTrailers.length > 0 &&
+                            <div className="flex flex-wrap sm:flex-nowrap
+                            w-full h-[400px] overflow-x-auto gap-4">
+                                {movieTrailers.slice(0, 2)?.map((trailer: any, index: number) => (
+                                    <iframe
+                                        key={index}
+                                        src={`https://www.youtube.com/embed/${trailer?.key}`}
+                                        title={movieDetails.title}
+                                        className="w-full rounded-xl"
+                                        allowFullScreen
+                                    />
+                                ))}
+                            </div>
+                        }
                         <h1 className="text-4xl font-bold text-white mb-4 mt-4 font-poppins">
                             Synopsis
                         </h1>
