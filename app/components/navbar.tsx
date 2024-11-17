@@ -7,11 +7,11 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-      setIsMounted(true);
+        setIsMounted(true);
     }, []);
-  
+
     if (!isMounted) {
-      return null;
+        return null;
     }
 
     return (
@@ -21,7 +21,7 @@ export default function Navbar() {
                     <img src="https://www.svgrepo.com/show/35017/popcorn.svg" className="h-8" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">POPWATCH</span>
                 </a>
-                <button 
+                <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     data-collapse-toggle="navbar-default"
                     type="button"
@@ -37,10 +37,10 @@ export default function Navbar() {
                 <div className={`${isMenuOpen ? "block" : "hidden"} w-full md:block md:w-auto`} id="navbar-default">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-navbar rounded-lg bg-navbar md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-navbar dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                        <a href="/now-playing?page=1" className="flex flex-row group gap-2 items-center py-2 px-3 text-white hover:text-gray-300 rounded md:bg-transparent md:p-0 dark:text-white" aria-current="page">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            <span>A l'affiche</span>
-                        </a>
+                            <a href="/now-playing?page=1" className="flex flex-row group gap-2 items-center py-2 px-3 text-white hover:text-gray-300 rounded md:bg-transparent md:p-0 dark:text-white" aria-current="page">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>A l'affiche</span>
+                            </a>
                         </li>
                         <li>
                             <a href="/genres" className="flex flex-row group gap-2 items-center py-2 px-3 text-white hover:text-gray-300 rounded md:bg-transparent md:p-0 dark:text-white">
@@ -49,10 +49,10 @@ export default function Navbar() {
                             </a>
                         </li>
                         <li>
-                        <a href="/ma-liste" className="flex flex-row group gap-2 items-center py-2 px-3 text-white hover:text-gray-300 rounded md:bg-transparent md:p-0 dark:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            <span>Ma Liste</span>
-                        </a>
+                            <a href="/ma-liste" className="flex flex-row group gap-2 items-center py-2 px-3 text-white hover:text-gray-300 rounded md:bg-transparent md:p-0 dark:text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <span>Ma Liste</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

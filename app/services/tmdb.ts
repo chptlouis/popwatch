@@ -155,3 +155,17 @@ export const getWatchProviders = async (id: string) => {
         throw new Error('Failed to fetch watch providers');
     }
 }
+
+export const searchMovies = async (query: string) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/search/movie?api_key=${API_KEY}&language=fr-FR&query=${query}`
+        );
+        const responseBody = await response.json();
+        return responseBody.results;
+    }
+    catch (error) {
+        console.error(error);
+        throw new Error('Failed to search movies');
+    }
+}
