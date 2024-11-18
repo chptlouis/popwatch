@@ -2,7 +2,6 @@ import Link from "next/link";
 import FavoriteButton from "./favoritebutton";
 
 export default function MovieCard(movie: any) {
-    const storage = window.localStorage;
     return (
         <Link href={`/movie/${movie.movie.id}`}>
             <div className="relative transform hover:scale-105 transition-transform duration-200">
