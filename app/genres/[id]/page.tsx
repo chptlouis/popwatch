@@ -51,7 +51,7 @@ export default function Genre(props: any) {
                     <h2 className="text-lg text-gray-200 mb-8 italic opacity-80">
                         Les meilleurs films de la catégorie {genre?.name}
                     </h2>
-                    <div className="flex justify-center mb-8 gap-8">
+                    <div className="flex justify-center mb-8 gap-4 sm:gap-8">
                         {[...Array(5)].map((_, i) => {
                             const pageNumber = i + 1;
                             return (
@@ -65,12 +65,12 @@ export default function Genre(props: any) {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {movies?.map((movie: any, index: number) => (
-                            <a href={`/movie/${movie.id}`} key={index}>
+                            <div key={index}>
                                 <MovieCard movie={movie} />
-                            </a>
+                            </div>
                         ))}
                     </div>
-                    <div className="flex justify-center mt-8 gap-8">
+                    <div className="flex justify-center mt-8 gap-4 sm:gap-8">
                         {[...Array(5)].map((_, i) => {
                             const pageNumber = i + 1;
                             return (
