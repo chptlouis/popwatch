@@ -3,15 +3,21 @@
 import { useState, useEffect } from "react";
 
 export default function FavoriteButton({ movie }: any) {
-    const storage = window.localStorage;
-    const favorites = storage.getItem('favorites') || '[]';
-    const parsedFavorites = JSON.parse(favorites);
+    const [isFavorite, setIsFavorite] = useState(false);
 
-    const [isFavorite, setIsFavorite] = useState(parsedFavorites.some((fav: any) => fav.id === movie.id));
+    useEffect(() => {
+        const storage = window.localStorage;
+        const favorites = storage.getItem('favorites') || '[]';
+        const parsedFavorites = JSON.parse(favorites);
+        setIsFavorite(parsedFavorites.some((fav: any) => fav.id === movie.id));
+    }, [movie.id]);
 
     const toggleFavorite = (e: any) => {
         e.preventDefault();
         e.stopPropagation();
+        const storage = window.localStorage;
+        const favorites = storage.getItem('favorites') || '[]';
+        const parsedFavorites = JSON.parse(favorites);
         let newFavorites;
         if (isFavorite) {
             newFavorites = parsedFavorites.filter((fav: any) => fav.id !== movie.id);
@@ -21,10 +27,6 @@ export default function FavoriteButton({ movie }: any) {
         storage.setItem('favorites', JSON.stringify(newFavorites));
         setIsFavorite(!isFavorite);
     };
-
-    useEffect(() => {
-        setIsFavorite(parsedFavorites.some((fav: any) => fav.id === movie.id));
-    }, [movie.id, parsedFavorites]);
 
     return (
         <button
