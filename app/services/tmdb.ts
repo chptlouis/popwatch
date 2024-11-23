@@ -100,10 +100,10 @@ export const getGenres = async () => {
     }
 }
 
-export const getMoviesByGenre = async (id: string) => {
+export const getMoviesByGenre = async (id: string, page: number) => {
     try {
         const response = await fetch(
-            `${API_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&page=1&sort_by=vote_average.desc&vote_count.gte=100&with_genres=${id}&with_origin_country=US&`
+            `${API_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&page=1&sort_by=vote_average.desc&vote_count.gte=100&with_genres=${id}&with_origin_country=US&page=${page}`
         );
         const responseBody = await response.json();
         return responseBody.results;
